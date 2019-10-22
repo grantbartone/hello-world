@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://grantbartone.github.io",
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-ga": "^2.7.0",
