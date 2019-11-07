@@ -1,0 +1,61 @@
+h1 {
+	display: flex;
+	justify-content: center;
+}
+
+.playerPrompt {
+	text-align: center;
+	font-weight: bold;
+}
+
+.playerRed {
+	color: red;
+}
+
+.center {
+	margin: 1em 0;
+	text-align: center;
+}
+
+.newGame {
+	background-color: lightgray;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+table {
+	margin: 0 auto;
+	border-spacing: 0;
+}
+
+.cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4em;
+	height: 4em;
+	background-color: dodgerblue;
+}
+
+.white {
+	background-color: white;
+	width: 3em;
+	height: 3em;
+	border-radius: 100%;
+}
+
+.red {
+	background-color: red;
+	width: 3em;
+	height: 3em;
+	border-radius: 100%;
+}
+
+.black {
+	background-color: black;
+	width: 3em;
+	height: 3em;
+	border-radius: 100%;
+}

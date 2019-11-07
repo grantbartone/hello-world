@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
+import ConnectN from './connectN/ConnectN';
 
 function App() {
 	initializeReactGA();
 	return (
 		<div className="App">
-		<header className="App-header">
-			<p>
-			Coming Soon
-			</p>
-		</header>
+			<ConnectN />
 		</div>
 	);
 }
