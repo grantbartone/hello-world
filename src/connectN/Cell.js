@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Cell class component
 export class Cell extends Component {
 	getCellColor(cell) {
 		if (cell === 1) return "red";

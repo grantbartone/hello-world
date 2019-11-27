@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import './ConnectN.css';
-import { Row } from './Row';
+import './styles.css';
+import { Cell } from './Cell';
 
+// ConnectN class component
 export default class ConnectN extends Component {
 	constructor(props) {
 		super(props);
 
-		const BOARDWIDTH = 7, BOARDHEIGHT = 6; // TODO: Get these from the UI
+		// Set defaults values for winning rows, board width, and board height
+		this.WINNINGROWS = 4;
+		this.BOARDWIDTH = 7;
+		this.BOARDHEIGHT = 6;
+
 		this.state = {
 			playerTurn: 1,
-			playerOneName: "Red", // TODO: Ask player names in the UI
+			playerOneName: "Red",
 			playerTwoName: "Black",
-			winningRows: 4, // TODO: Ask how many in-a-row to win
-			boardHeight: BOARDHEIGHT,
-			board: new Array(BOARDWIDTH).fill([]),
+			winningRows: this.WINNINGROWS,
+			boardHeight: this.BOARDHEIGHT,
+			board: new Array(this.BOARDWIDTH).fill([]),
 			isGameOver: false,
 			isDraw: false,
 		};
@@ -29,13 +34,6 @@ export default class ConnectN extends Component {
 			isGameOver: false,
 			isDraw: false,
 		});
-	}
-
-	getPlayerTurnName() {
-		if (this.state.playerTurn === 1) {
-			return <span className="playerRed">{this.state.playerOneName}</span>;
-		}
-		return this.state.playerTwoName;
 	}
 
 	verticalWinner(board) {
@@ -168,6 +166,13 @@ export default class ConnectN extends Component {
 		return grid;
 	}
 
+	getPlayerTurnName() {
+		if (this.state.playerTurn === 1)
+			return <span className="playerRed">{this.state.playerOneName}</span>;
+		else
+			return <span>{this.state.playerTwoName}</span>;
+	}
+
 	renderPlayerPrompt() {
 		if (this.state.isDraw)
 			return <div className="playerPrompt">This game is a draw!</div>;
@@ -182,7 +187,7 @@ export default class ConnectN extends Component {
 		if (this.state.isDraw || this.state.isGameOver)
 			return (
 				<div className="center">
-					<button className="newGame" onClick={() => this.initNewGame()}>Play Again!</button>
+					<button className="newGame" onClick={() => this.initNewGame()}>New Game</button>
 				</div>
 			);
 		else
@@ -201,9 +206,17 @@ export default class ConnectN extends Component {
 						{grid.map((row, i) => <Row key={i} row={row} handleClick={this.handleClick} />)}
 					</tbody>
 				</table>
-				<div className="center">By: Grant Bartone</div>
-				<div className="center">Coming Soon: "Connect N"</div>
 			</div>
 		);
 	}
+}
+
+// Row function component
+function Row(props) {
+	const { row, handleClick } = props;
+	return (
+		<tr>
+			{row.map((cell, i) => <Cell key={i} cell={cell} handleClick={handleClick} columnIndex={i} />)}
+		</tr>
+	);
 }
