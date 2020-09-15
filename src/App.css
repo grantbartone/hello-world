@@ -22,3 +22,12 @@
 .App-link {
 	color: #09d3ac;
 }
+
+.welcome {
+	margin: 1em 0;
+	text-align: center;
+}
+
+.welcome_buttons button {
+	margin: 0 3em;
+}

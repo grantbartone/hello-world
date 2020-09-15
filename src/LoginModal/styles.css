@@ -1,0 +1,123 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+#loginContent {
+	/* opacity: 0; */
+	margin: 4em auto;
+	max-width: 20em;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 0 black;
+}
+
+.loginForm {
+	padding: 20px;
+}
+
+.loginLogo {
+	background-color: darkgray;
+	border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.loginLogo img {
+	margin: 15px;
+}
+
+#loginHint {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.loginForm input {
+	margin-bottom: 15px;
+	padding: 1em;
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 1em;
+}
+
+.loginForm input[type=submit] {
+	margin-bottom: 0;
+	padding: 1em;
+	background-color: lightgreen;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+.block {
+	display: block;
+}
+
+.none {
+	display: none;
+}
+
+.reveal {
+	animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.25, 1) 0s forwards;
+}
+
+.flyAway {
+	animation: flyUpOut 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s forwards;
+}
+
+.shake {
+	animation: shake 0.5s cubic-bezier(0, 0.42, 1, 1) 0s forwards;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 30px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes flyUpOut {
+	from {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, -200%, 0);
+	}
+}
+
+@keyframes addTableRow {
+	from {
+		background-color: orange;
+	}
+	to {
+		background-color: inherit;
+	}
+}
+
+@keyframes shake {
+	0% {
+		opacity: 1;
+		transform: perspective(500px) rotate3d(0);
+	}
+	20% {
+		transform: perspective(500px) rotate3d(0, 1, 0, -10deg);
+	}
+	40% {
+		transform: perspective(500px) rotate3d(0, 1, 0, 10deg);
+	}
+	60% {
+		transform: perspective(500px) rotate3d(0, 1, 0, -10deg);
+	}
+	80% {
+		transform: perspective(500px) rotate3d(0, 1, 0, 5deg);
+	}
+	100% {
+		opacity: 1;
+		transform: perspective(500px) rotate3d(0);
+	}
+}
