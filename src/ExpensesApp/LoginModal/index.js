@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './styles.css'
-import Logo from './expensify-logo--reverse.svg'
+import Logo from './logo-icons.svg'
 
 /* Background: Originally built as a take-home project in vanilla JS in 2019, this login component
  * ported to React has a fun, intuitive "head-shake" gesture when the authentication fails.
@@ -27,7 +27,7 @@ export default function LoginModal({ dismissLogin }) {
                 loginError()
                 break
             case 2:
-                setLoginHint("Failed again. Try a couple more times...")
+                setLoginHint("Failed again. A couple more tries...")
                 loginError()
                 break
             case 1:

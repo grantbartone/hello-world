@@ -23,11 +23,13 @@
 
 .loginLogo img {
 	margin: 15px;
+	padding-left: 95px;
 }
 
 #loginHint {
 	color: red;
 	margin-bottom: 10px;
+	height: 20px;
 }
 
 .loginForm input {

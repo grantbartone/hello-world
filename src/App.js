@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
 import ConnectN from './connectN';
-import LoginModal from './LoginModal';
+import ExpensesApp from './ExpensesApp';
 
 const APP_STATES = {
 	'WELCOME': 'welcome',
 	'CONNECT': 'connect',
-	'LOGINMODAL': 'loginmodal',
+	'EXPENSES_APP': 'expenses_app',
 }
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
 	const setWelcomeState = () => setAppState(APP_STATES.WELCOME)
 
-	const handleLoginClick = () => setAppState(APP_STATES.LOGINMODAL)
+	const handleLoginClick = () => setAppState(APP_STATES.EXPENSES_APP)
 
 	const handleConnectClick = () => setAppState(APP_STATES.CONNECT)
 	
@@ -38,8 +38,8 @@ function App() {
 		switch(appState) {
 			case APP_STATES.CONNECT:
 				return <ConnectN />
-			case APP_STATES.LOGINMODAL:
-				return <LoginModal dismissLogin={setWelcomeState} />
+			case APP_STATES.EXPENSES_APP:
+				return <ExpensesApp dismissLogin={setWelcomeState} />
 			case APP_STATES.WELCOME:
 			default:
 				return renderWelcome()
