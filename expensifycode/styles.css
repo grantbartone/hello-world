@@ -1,0 +1,208 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+body {
+	background-color:#37444c;
+	font-family: Fabriga,GT-America-Standard,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: white;
+}
+
+h1 {
+	text-shadow: 0 0 15px black;
+	background: url(expensify-logo--reverse.svg) center no-repeat;
+}
+
+#loginContent {
+	opacity: 0;
+	margin: 4em auto;
+	max-width: 20em;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 0 black;
+}
+
+.loginForm {
+	padding: 20px;
+}
+
+.loginLogo {
+	background-color: darkgray;
+	border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.loginLogo img {
+	margin: 15px;
+}
+
+#loginHint {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.loginForm input {
+	margin-bottom: 15px;
+	padding: 1em;
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 1em;
+}
+
+.loginForm input[type=submit] {
+	margin-bottom: 0;
+	padding: 1em;
+	background-color: lightgreen;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+table {
+	opacity: 0;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	box-shadow: 0 0 15px 0 black;
+}
+
+th, td {
+	border: 1px solid #CCCCCC;
+	padding: 0.25em;
+	color: black;
+}
+
+thead th {
+	background-color: #2eaae2;
+	border: 0;
+}
+
+thead th:nth-child(1) {
+	width: 20%;
+}
+
+thead th:nth-child(2) {
+	width: 60%;
+}
+
+thead th:nth-child(3) {
+	width: 20%;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #CCCCCC;
+}
+
+tbody tr:last-child td {
+	background-color: orangered;
+	animation: addTableRow 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s forwards;
+}
+
+#transactionForm {
+	margin-top: 30px;
+}
+
+#createTransaction {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 0 black;
+}
+
+#createTransaction input {
+	padding: 0.5em;
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	font-size: 1em;
+	margin-right: 10px;
+}
+
+#createTransaction input[name=merchant] {
+	width: 50%;
+}
+
+#createTransaction input[type=submit] {
+	background-color: lightgreen;
+	color: white;
+	font-size: 1.2em;
+	margin-right: 0;
+	padding: 0 2em;
+}
+
+.block {
+	display: block;
+}
+
+.none {
+	display: none;
+}
+
+.reveal {
+	animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.25, 1) 0s forwards;
+}
+
+.flyAway {
+	animation: flyUpOut 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s forwards;
+}
+
+.shake {
+	animation: shake 0.5s cubic-bezier(0, 0.42, 1, 1) 0s forwards;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 30px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes flyUpOut {
+	from {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, -200%, 0);
+	}
+}
+
+@keyframes addTableRow {
+	from {
+		background-color: orange;
+	}
+	to {
+		background-color: inherit;
+	}
+}
+
+@keyframes shake {
+	0% {
+		opacity: 1;
+		transform: perspective(500px) rotate3d(0);
+	}
+	20% {
+		transform: perspective(500px) rotate3d(0, 1, 0, -10deg);
+	}
+	40% {
+		transform: perspective(500px) rotate3d(0, 1, 0, 10deg);
+	}
+	60% {
+		transform: perspective(500px) rotate3d(0, 1, 0, -10deg);
+	}
+	80% {
+		transform: perspective(500px) rotate3d(0, 1, 0, 5deg);
+	}
+	100% {
+		opacity: 1;
+		transform: perspective(500px) rotate3d(0);
+	}
+}
