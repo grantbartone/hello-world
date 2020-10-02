@@ -24,14 +24,15 @@ function App() {
 	const renderWelcome = () => (
 		<div className="welcome">
 			<div className="welcome">
-				Welcome to Grant's GithubIO site, where I'm working on hosting thing's I've built
-				that are open-source on my <a href="https://github.com/grantbartone">Github</a>.
+				Welcome to Grant's GithubIO site, where I'm hosting a few random projects I've built
+				that are open-source on my <a href="https://github.com/grantbartone/hello-world" target="_blank" rel="noopener noreferrer">Github</a>.
 			</div>
 			<div className="welcome">Pick a button below from some interactive options:</div>
 			<div className="welcome_buttons">
 				<button onClick={handleLoginClick}>Check out my Login UX</button>
 				<button onClick={handleConnectClick}>Play Connect 4</button>
 			</div>
+			<GameOfLife />
 		</div>
 	)
 
@@ -50,8 +51,8 @@ function App() {
 	return (
 		<div className="App">
 			{renderCurrentState()}
+			{/* {appState === APP_STATES.WELCOME && <GameOfLife />} */}
 			<div className="welcome">By: Grant Bartone</div>
-			<GameOfLife />
 		</div>
 	);
 }
