@@ -28,6 +28,10 @@
 	text-align: center;
 }
 
+.welcome_buttons {
+	margin-bottom: 2em;
+}
+
 .welcome_buttons button {
-	margin: 0 3em;
+	margin: 0 3em ;
 }

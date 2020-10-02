@@ -1,30 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 import { GLIDER } from "./patterns";
 
 export default function GameOfLife() {
   const [ board, setBoard ] = useState(GLIDER);
-  const [ pastBoards, setPastBoards ] = useState([board]);
-  const [ count, setCount ] = useState(0);
 
-  const advanceGeneration = (start: boolean[][]) => {
-    const nextCount = count + 1;
-    if (nextCount === pastBoards.length) {
-      const nextBoard = advance(board);
-      setBoard(nextBoard);
-      setPastBoards([...pastBoards, nextBoard]);
-    } else {
-      setBoard(pastBoards[nextCount]);
+  useEffect(() => {
+    const intervalRef = setInterval(() => setBoard(advance(board)), 200)
+    return () => {
+      clearInterval(intervalRef)
     }
-    setCount(count + 1);
-  }
-
-  const previousGeneration = () => {
-    const lastCount = count - 1 > 0 ? count - 1 : 0
-    setCount(lastCount)
-    setBoard(pastBoards[lastCount])
-  }
+  }, [board])
 
   const renderBoard = () => {
     return (
@@ -42,23 +29,13 @@ export default function GameOfLife() {
 
   return (
     <div className="container">
-      <h1>Welcome to the Game... of Life!</h1>
+      <div className="header">Welcome to the Game... of Life!</div>
       <div className="intro">
         <p>
-          Below is Grant's "Game of Life" challenge built in React!
+          This is Grant's "Game of Life" challenge built in React! This version auto-advances generations every 200ms.
         </p>
         <p>
-          Click a button below to play, and learn more about the rules of the game <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer">here</a>.
-        </p>
-        <p>
-          <button onClick={previousGeneration}>
-            Previous Generation
-          </button>
-        </p>
-        <p>
-          <button onClick={() => advanceGeneration(board)}>
-            Advance Generation
-          </button>
+          Learn more about the rules of the game <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
       </div>
       
