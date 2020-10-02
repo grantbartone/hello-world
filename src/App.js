@@ -3,6 +3,7 @@ import ReactGA from 'react-ga';
 import './App.css';
 import ConnectN from './connectN';
 import ExpensesApp from './ExpensesApp';
+import GameOfLife from './GameOfLife'
 
 const APP_STATES = {
 	'WELCOME': 'welcome',
@@ -50,6 +51,7 @@ function App() {
 		<div className="App">
 			{renderCurrentState()}
 			<div className="welcome">By: Grant Bartone</div>
+			<GameOfLife />
 		</div>
 	);
 }

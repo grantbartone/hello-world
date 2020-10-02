@@ -1,0 +1,30 @@
+.container {
+  text-align: center;
+}
+
+h1 {
+  background-color: #222;
+  padding: 40px;
+  color: white;
+}
+
+.intro {
+  margin: auto;
+  width: 50%;
+  padding-bottom: 10px;
+}
+
+.row {
+  height: 30px;
+}
+
+.item {
+  display: inline-block;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+}
+
+.item--alive {
+  background-color: black;
+}
