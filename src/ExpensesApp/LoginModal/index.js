@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 import Logo from './logo-icons.svg'
 
 /* Background: Originally built as a take-home project in vanilla JS in 2019, this login component
  * ported to React has a fun, intuitive "head-shake" gesture when the authentication fails.
  */
-export default function LoginModal({ dismissLogin }) {
+export default function LoginModal({ showTransactions }) {
     const ANIMATION_TIMEOUT = 500;
 
     const [ attemptsLeft, setAttemptsLeft ] = useState(3)
     const [ loginHint, setLoginHint ] = useState("")
     const [ shakeLogin, setShakeLogin ] = useState("")
     const [ loginFlyAway, setLoginFlyAway ] = useState("")
-
-    useEffect(() => {
-        // This hack can be cleaned up using head manager library instead of a direct DOM update
-        document.body.style = 'background-color: #37444c; color: white;'
-        return () => document.body.style = 'background-color: null;  color: null'
-    }, [])
 
     const handleAuthSubmit = (e) => {
         e.preventDefault()
@@ -47,7 +41,7 @@ export default function LoginModal({ dismissLogin }) {
 
     const loginSuccessful = () => setLoginFlyAway(
         "flyAway",
-        setTimeout(() => dismissLogin(), ANIMATION_TIMEOUT)
+        setTimeout(() => showTransactions(), ANIMATION_TIMEOUT)
     )
 
     return (

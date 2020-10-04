@@ -29,7 +29,7 @@ function App() {
 			</div>
 			<div className="welcome">Pick a button below from some interactive options:</div>
 			<div className="welcome_buttons">
-				<button onClick={handleLoginClick}>Check out my Login UX</button>
+				<button onClick={handleLoginClick}>Check out my Expenses App</button>
 				<button onClick={handleConnectClick}>Play Connect 4</button>
 			</div>
 			<GameOfLife />
@@ -41,7 +41,7 @@ function App() {
 			case APP_STATES.CONNECT:
 				return <ConnectN />
 			case APP_STATES.EXPENSES_APP:
-				return <ExpensesApp dismissLogin={setWelcomeState} />
+				return <ExpensesApp dismissApp={setWelcomeState} />
 			case APP_STATES.WELCOME:
 			default:
 				return renderWelcome()
@@ -51,7 +51,6 @@ function App() {
 	return (
 		<div className="App">
 			{renderCurrentState()}
-			{/* {appState === APP_STATES.WELCOME && <GameOfLife />} */}
 			<div className="welcome">By: Grant Bartone</div>
 		</div>
 	);

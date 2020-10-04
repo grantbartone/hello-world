@@ -1,0 +1,82 @@
+table {
+	opacity: 0;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	background-color: white;
+	box-shadow: 0 0 15px 0 black;
+}
+
+th, td {
+	border: 1px solid #CCCCCC;
+	padding: 0.25em;
+	color: black;
+}
+
+thead th {
+	background-color: #2eaae2;
+	border: 0;
+}
+
+thead th:nth-child(1) {
+	width: 20%;
+}
+
+thead th:nth-child(2) {
+	width: 60%;
+}
+
+thead th:nth-child(3) {
+	width: 20%;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #CCCCCC;
+}
+
+tbody tr:last-child td {
+	background-color: orangered;
+	animation: addTableRow 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s forwards;
+}
+
+#transactionForm {
+	margin-top: 30px;
+}
+
+#createTransaction {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 15px 0 black;
+}
+
+#createTransaction input {
+	padding: 0.5em;
+	border: 1px solid #eeeeee;
+	border-radius: 5px;
+	font-size: 1em;
+	margin-right: 10px;
+}
+
+#createTransaction input[name=merchant] {
+	width: 50%;
+}
+
+#createTransaction input[type=submit] {
+	background-color: lightgreen;
+	color: white;
+	font-size: 1.2em;
+	margin-right: 0;
+	padding: 0 2em;
+}
+
+@keyframes addTableRow {
+	from {
+		background-color: orange;
+	}
+	to {
+		background-color: inherit;
+	}
+}
